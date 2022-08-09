@@ -1,0 +1,29 @@
+# Give a name to the workflow
+name: Demo Workflow
+
+# To automatically trigger a workflow, use on to define which events can cause the workflow to run.
+on: [push]
+
+jobs:
+
+  dev:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Development Environment
+        run: echo "Deploy the apps to Dev env"
+
+  qa:
+    needs: dev
+    runs-on: ubuntu-latest
+    steps:
+      - name: QA Environment
+        run: |
+          echo "Deploy the apps to QA env"
+          sleep 30
+
+  prod:
+    needs: [dev, qa]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Production Environment
+        run: echo "Deploy the apps to Prod env"
