@@ -1,0 +1,27 @@
+# Give a name to the workflow
+name: Demo Workflow
+
+# To automatically trigger a workflow, use on to define which events can cause the workflow to run.
+on: [push]
+
+jobs:
+
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 1st job
+        run: echo "This is 1st job"
+
+  job2:
+    needs: job1
+    runs-on: ubuntu-latest
+    steps:
+      - name: 2nd job
+        run: echo "This is 2nd job"
+
+  job3:
+    needs: [job1, job2]
+    runs-on: ubuntu-latest
+    steps:
+      - name: 3rd job
+        run: echo "This is 3rd job"
