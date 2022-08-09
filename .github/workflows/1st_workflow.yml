@@ -20,6 +20,7 @@ jobs:
         run: |
             echo "This is 2nd job"
             curl https://www.google.com/
+            sleep 30
 
   job3:
     # needs: [job1, job2]
