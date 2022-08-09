@@ -1,5 +1,5 @@
 # Give a name to the workflow
-name: Demo Workflow
+name: Demo Workflow 2
 
 # To automatically trigger a workflow, use on to define which events can cause the workflow to run.
 on: [push]
