@@ -13,14 +13,16 @@ jobs:
         run: echo "This is 1st job"
 
   job2:
-    needs: job1
+    # needs: job1
     runs-on: ubuntu-latest
     steps:
       - name: 2nd job
-        run: echo "This is 2nd job"
+        run: |
+            echo "This is 2nd job"
+            curl https://www.google.com/
 
   job3:
-    needs: [job1, job2]
+    # needs: [job1, job2]
     runs-on: ubuntu-latest
     steps:
       - name: 3rd job
