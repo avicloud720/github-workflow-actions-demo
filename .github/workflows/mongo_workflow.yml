@@ -19,6 +19,7 @@ jobs:
           atlas config set private_api_key bf054837-de09-42ed-8b98-6b4fea68eb8a
           atlas config set project_id 62f3427084a04c48f05f8a7e
           atlas config set org_id 62f342087fa66d7a256e53b5
+          atlas accessList create --currentIP
 
           echo -e "\n\n============Cluster List===============\n\n"
           atlas clusters list
