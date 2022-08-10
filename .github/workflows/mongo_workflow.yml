@@ -12,4 +12,4 @@ jobs:
         run: |
           echo "Connecting to MongoDB Atlas......"
           brew install mongosh
-          mongosh "mongodb://admin:.Avi_720@adminactions.pisafce.mongodb.net/ecam"
+          mongosh "mongodb://admin:.Avi_720@actions.pisafce.mongodb.net/ecam"
