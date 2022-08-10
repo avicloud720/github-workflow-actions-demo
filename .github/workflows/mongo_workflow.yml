@@ -11,5 +11,13 @@ jobs:
       - name: MongoDB Connection
         run: |
           echo "Connecting to MongoDB Atlas......"
-          brew install mongosh
-          mongosh "mongodb://admin:.Avi_720@actions.pisafce.mongodb.net/ecam"
+          brew install mongodb-atlas
+          atlas --version
+          atlas config set public_api_key eapwhggt
+          atlas config set private_api_key bf054837-de09-42ed-8b98-6b4fea68eb8a
+          atlas config set project_id 62f3427084a04c48f05f8a7e
+          atlas config set org_id 62f342087fa66d7a256e53b5
+
+
+          # brew install mongosh
+          # mongo "mongodb+srv://ecam.96vnzre.mongodb.net/ecam" --username admin --password .Avi_720
