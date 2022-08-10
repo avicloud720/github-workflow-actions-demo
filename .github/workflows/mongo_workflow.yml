@@ -14,17 +14,17 @@ jobs:
           brew install mongodb-atlas
           atlas --version
 
-          echo "\n\n============Configuration Setup===============\n\n"
+          echo -e "\n\n============Configuration Setup===============\n\n"
           atlas config set public_api_key eapwhggt
           atlas config set private_api_key bf054837-de09-42ed-8b98-6b4fea68eb8a
           atlas config set project_id 62f3427084a04c48f05f8a7e
           atlas config set org_id 62f342087fa66d7a256e53b5
 
-          echo "\n\n============Cluster List===============\n\n"
+          echo -e "\n\n============Cluster List===============\n\n"
           atlas clusters list
 
-          echo "\n\n============Backup Snapshots List===============\n\n"
-          atlas backups snapshots list 62f34e777fa66d7a256f86e4
+          echo -e "\n\n============Backup Snapshots List===============\n\n"
+          atlas backups snapshots list ecam
 
-          echo "\n\n============Backup Snapshots Creation===============\n\n"
-          atlas backups snapshots create 62f34e777fa66d7a256f86e4
+          echo -e "\n\n============Backup Snapshots Creation===============\n\n"
+          atlas backups snapshots create ecam
