@@ -1,33 +1,30 @@
 # Give a name to the workflow
-name: Mongo Backup
+name: Demo Workflow
 
 # To automatically trigger a workflow, use on to define which events can cause the workflow to run.
-on: [push]
+# on: [push]
 
 jobs:
 
-  mongo_connection:
-    runs-on: macos-latest
+  dev:
+    runs-on: ubuntu-latest
     steps:
-      - name: MongoDB Connection
+      - name: Development Environment
+        run: echo "Deploy the apps to Dev"
+
+  qa:
+    needs: dev
+    runs-on: ubuntu-latest
+    steps:
+      - name: 2nd job
         run: |
-          echo "Connecting to MongoDB Atlas......"
-          brew install mongosh
-          mongosh "mongodb+srv://actions.pisafce.mongodb.net/myFirstDatabase" --apiVersion 1 --username admin --password .Avi_720
+            echo "This is 2nd job"
+            curl https://www.google.com/
+            sleep 30
 
-
-  # qa:
-  #   needs: dev
-  #   runs-on: macos-latest
-  #   steps:
-  #     - name: QA Environment
-  #       run: |
-  #         echo "Deploy the apps to QA env"
-  #         sleep 30
-
-  # prod:
-  #   needs: [dev, qa]
-  #   runs-on: macos-latest
-  #   steps:
-  #     - name: Production Environment
-  #       run: echo "Deploy the apps to Prod env"
+  prod:
+    needs: [dev, qa]
+    runs-on: ubuntu-latest
+    steps:
+      - name: 3rd job
+        run: echo "This is 3rd job"
