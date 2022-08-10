@@ -5,7 +5,6 @@ name: Mongo Backup
 on: [push]
 
 jobs:
-
   mongo_connection:
     runs-on: macos-latest
     steps:
@@ -13,4 +12,4 @@ jobs:
         run: |
           echo "Connecting to MongoDB Atlas......"
           brew install mongosh
-          mongosh "mongodb+srv://actions.pisafce.mongodb.net/action" --apiVersion 1 --username admin --password .Avi_720
+          mongosh "mongodb+srv://actions.pisafce.mongodb.net/ecam" --apiVersion 1 --username admin --password .Avi_720
