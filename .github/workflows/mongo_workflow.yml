@@ -27,4 +27,4 @@ jobs:
           atlas backups snapshots list ecam
 
           echo -e "\n\n============Backup Snapshots Creation===============\n\n"
-          atlas backups snapshots create ecam
+          atlas backups snapshots create ecam --desc "snapshot created by github workflow"
