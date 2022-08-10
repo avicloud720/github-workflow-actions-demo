@@ -20,7 +20,6 @@ jobs:
           atlas config set project_id 62f3427084a04c48f05f8a7e
           atlas config set org_id 62f342087fa66d7a256e53b5
           ifconfig -l | xargs -n1 ipconfig getifaddr
-          # atlas accessList create --currentIP
 
           echo -e "\n\n============Cluster List===============\n\n"
           atlas clusters list
