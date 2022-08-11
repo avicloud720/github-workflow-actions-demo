@@ -6,9 +6,7 @@ COPY mongo_backup.sh /mongo_backup.sh
 
 RUN apk update && apk add git \
 && git clone https://github.com/Homebrew/brew ~/.linuxbrew/Homebrew \
-&& mkdir ~/.linuxbrew/bin \
-&& ln -s ../Homebrew/brew/bin ~/.linuxbrew/bin \
-&& eval $(~/.linuxbrew/bin/brew shellenv) \
+&& eval $(~/.linuxbrew/Homebrew/brew/bin/brew shellenv) \
 && brew --version \
 && chmod +x mongo_backup.sh
 
