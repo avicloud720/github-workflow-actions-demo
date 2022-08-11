@@ -1,8 +1,10 @@
 #!/bin/sh -l
 
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
 echo "Connecting to MongoDB Atlas......"
-wget https://fastdl.mongodb.org/mongocli/mongodb-atlas-cli_1.1.5_linux_arm64.tar.gz
-ls
+brew install mongodb-atlas
 atlas --version
 
 echo -e "\n\n============Configuration Setup===============\n\n"
