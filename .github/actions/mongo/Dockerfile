@@ -5,7 +5,7 @@ FROM ubuntu
 COPY mongo_backup.sh /mongo_backup.sh
 
 RUN apt-get update -y \
-&& apt-get install -y gnupg \
+&& apt-get install -y gnupg wget \
 && wget -qO - https://pgp.mongodb.com/server-5.0.asc | apt-key add - \
 && echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-5.0.list \
 && apt-get install -y mongodb-atlas-cli \
