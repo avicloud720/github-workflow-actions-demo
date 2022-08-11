@@ -5,8 +5,8 @@ FROM alpine:3.10
 COPY mongo_backup.sh /mongo_backup.sh
 
 RUN apk update && apk add git \
-&& git clone https://github.com/Homebrew/brew ~/.linuxbrew/Homebrew \
-&& eval $(~/.linuxbrew/Homebrew/brew/bin/brew shellenv) \
+&& git clone https://github.com/Homebrew/brew \
+&& eval $(brew/bin/brew shellenv) \
 && brew --version \
 && chmod +x mongo_backup.sh
 
