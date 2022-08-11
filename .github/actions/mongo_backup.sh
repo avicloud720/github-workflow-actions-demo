@@ -9,7 +9,9 @@ atlas config set project_id 62f3427084a04c48f05f8a7e
 atlas config set org_id 62f342087fa66d7a256e53b5
 
 echo -e "\n\n============Cluster List===============\n\n"
-atlas clusters list
+echo "This is $1"
+clusters_list=`atlas clusters list`
+echo "::set-output name=clusters_list::$clusters_list"
 
 # echo -e "\n\n============Backup Snapshots List===============\n\n"
 # atlas backups snapshots list ecam

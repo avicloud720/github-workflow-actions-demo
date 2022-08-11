@@ -9,7 +9,13 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: MongoDB Connection in progress......
+        id: connection
         uses: ./.github/actions/mongo_backup.sh
+        with:
+          db_name: 'mongodb'
+      # Use the output from the `connection` step
+      - name: Get the output
+        run: echo "The cluster list ${{ steps.connection.outputs.clusters_list }}"
   connection_completed:
     needs: mongo_connection
     runs-on: ubuntu-latest
