@@ -1,7 +1,10 @@
 #!/bin/sh -l
 
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+git clone https://github.com/Homebrew/brew homebrew
+eval "$(homebrew/bin/brew shellenv)"
+brew update --force --quiet
+chmod -R go-w "$(brew --prefix)/share/zsh"
 
 echo "Connecting to MongoDB Atlas......"
 brew install mongodb-atlas
