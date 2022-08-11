@@ -1,0 +1,16 @@
+# action.yml
+name: 'Custom Action'
+description: 'List clusters of DB system'
+inputs:
+  db_name:  # id of input
+    description: 'Type of DB'
+    required: true
+    default: 'mongodb'
+outputs:
+  clusters_list: # id of output
+    description: 'List of clusters'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.db_name }}
