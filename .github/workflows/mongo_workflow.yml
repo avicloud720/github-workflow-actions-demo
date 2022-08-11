@@ -4,6 +4,12 @@ name: Mongo Backup
 # To automatically trigger a workflow, use on to define which events can cause the workflow to run.
 on: [push]
 
+env:
+  MONGO_ATLAS_PUB_API_KEY: ${{ secrets.MONGO_ATLAS_PUB_API_KEY }}
+  MONGO_ATLAS_PRIV_API_KEY: ${{ secrets.MONGO_ATLAS_PRIV_API_KEY }}
+  MONGO_ATLAS_PROJECT_ID: ${{ secrets.MONGO_ATLAS_PROJECT_ID }}
+  MONGO_ATLAS_ORG_ID: ${{ secrets.MONGO_ATLAS_ORG_ID }}
+  
 jobs:
   mongo_connection:
     runs-on: ubuntu-latest
