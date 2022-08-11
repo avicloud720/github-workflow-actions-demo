@@ -1,5 +1,6 @@
 #!/bin/sh -l
 
+echo $RANDOM
 echo "Connecting to MongoDB Atlas......"
 brew install mongodb-atlas
 atlas --version
