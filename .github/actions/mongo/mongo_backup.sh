@@ -4,10 +4,10 @@ echo "Connecting to MongoDB Atlas......"
 atlas --version
 
 echo "\n\n============Configuration Setup===============\n\n"
-atlas config set public_api_key lwyjahcy
-atlas config set private_api_key 53156a8d-44e7-4715-9323-fae8b1fc2ad2
-atlas config set project_id 62f3427084a04c48f05f8a7e
-atlas config set org_id 62f342087fa66d7a256e53b5
+atlas config set public_api_key ${{ secrets.MONGO_ATLAS_PUB_API_KEY }}
+atlas config set private_api_key ${{ secrets.MONGO_ATLAS_PRIV_API_KEY }}
+atlas config set project_id ${{ secrets.MONGO_ATLAS_PROJECT_ID }}
+atlas config set org_id ${{ secrets.MONGO_ATLAS_ORG_ID }}
 
 echo "\n\n============Cluster List===============\n\n"
 echo "This is $1"
