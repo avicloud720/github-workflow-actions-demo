@@ -1,8 +1,7 @@
 #!/bin/sh -l
 
-echo $(brew install mongodb-atlas)
 echo "Connecting to MongoDB Atlas......"
-# brew install mongodb-atlas
+brew install mongodb-atlas
 atlas --version
 
 echo -e "\n\n============Configuration Setup===============\n\n"
