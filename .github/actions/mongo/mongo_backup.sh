@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "Connecting to MongoDB Atlas......"
 brew install mongodb-atlas
 atlas --version
