@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v2
       - name: MongoDB Connection in progress......
         id: connection
-        uses: actions/Dockerfile
+        uses: actions/mongo
         with:
           db_name: 'mongodb'
       # Use the output from the `connection` step
