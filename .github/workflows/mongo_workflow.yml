@@ -8,6 +8,8 @@ jobs:
   mongo_connection:
     runs-on: macos-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
       - name: MongoDB Connection in progress......
         id: connection
         uses: ./.github/actions/mongo_backup.sh
