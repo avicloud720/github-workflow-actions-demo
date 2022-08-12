@@ -9,9 +9,13 @@ atlas config set private_api_key $MONGO_ATLAS_PRIV_API_KEY
 atlas config set project_id $MONGO_ATLAS_PROJECT_ID
 atlas config set org_id $MONGO_ATLAS_ORG_ID
 
+atlas accessLists create $1
+
+sleep 30
+
 atlas organizations apiKeys accessLists create --apiKey 62f5ff28a3c1c03dd24ddf10 --ip $1
 
-sleep 60
+sleep 30
 
 echo "\n============Cluster List==============="
 clusters_list=`atlas clusters list`
