@@ -17,8 +17,8 @@ echo "This is $1"
 clusters_list=`atlas clusters list`
 echo "::set-output name=clusters_list::$clusters_list"
 
-echo -e "\n============Backup Snapshots List==============="
+echo "\n============Backup Snapshots List==============="
 atlas backups snapshots list ecam
 
-echo -e "\n============Backup Snapshots Creation==============="
+echo "\n============Backup Snapshots Creation==============="
 atlas backups snapshots create ecam --desc "snapshot created by github workflow"
