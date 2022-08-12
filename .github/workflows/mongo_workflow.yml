@@ -19,10 +19,7 @@ jobs:
         uses: haythem/public-ip@v1.2
       - name: Print Public IP
         run: |
-          echo ${{ steps.ip.outputs.ipv4 }}
-          echo ${{ steps.ip.outputs.ipv6 }}
-        env:
-          runner_ip: ${{ steps.ip.outputs.ipv6 }}
+          echo ${{ steps.ip.outputs.ipv4 }} > $GITHUB_ENV
       - name: Checkout
         uses: actions/checkout@v2
       - name: MongoDB Connection in progress......
