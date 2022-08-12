@@ -11,6 +11,7 @@ atlas config set org_id $MONGO_ATLAS_ORG_ID
 # atlas organizations apiKeys accessLists create --apiKey $MONGO_ATLAS_PUB_API_KEY
 # atlas accessList create --currentIP
 atlas accessList create $1
+atlas organizations apiKeys accessLists create --ip $1
 
 echo "\n============Cluster List==============="
 clusters_list=`atlas clusters list`
