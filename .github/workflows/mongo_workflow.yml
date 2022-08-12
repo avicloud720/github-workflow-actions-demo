@@ -9,11 +9,20 @@ env:
   MONGO_ATLAS_PRIV_API_KEY: ${{ secrets.MONGO_ATLAS_PRIV_API_KEY }}
   MONGO_ATLAS_PROJECT_ID: ${{ secrets.MONGO_ATLAS_PROJECT_ID }}
   MONGO_ATLAS_ORG_ID: ${{ secrets.MONGO_ATLAS_ORG_ID }}
-  
+
 jobs:
   mongo_connection:
     runs-on: ubuntu-latest
     steps:
+    - name: Public IP
+      id: ip
+      uses: haythem/public-ip@v1.2
+    - name: Print Public IP
+      run: |
+        echo ${{ steps.ip.outputs.ipv4 }}
+        echo ${{ steps.ip.outputs.ipv6 }}
+      env:
+        runner_ip: ${{ steps.ip.outputs.ipv6 }}
       - name: Checkout
         uses: actions/checkout@v2
       - name: MongoDB Connection in progress......
