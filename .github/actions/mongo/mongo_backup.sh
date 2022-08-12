@@ -9,7 +9,7 @@ atlas config set private_api_key $MONGO_ATLAS_PRIV_API_KEY
 atlas config set project_id $MONGO_ATLAS_PROJECT_ID
 atlas config set org_id $MONGO_ATLAS_ORG_ID
 
-atlas accessLists create '0.0.0.0/0' --type ipAddress
+atlas accessLists create $1 --type ipAddress
 
 echo "\n============Cluster List==============="
 clusters_list=`atlas clusters list`
