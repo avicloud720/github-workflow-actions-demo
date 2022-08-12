@@ -11,6 +11,8 @@ atlas config set org_id $MONGO_ATLAS_ORG_ID
 
 atlas accessLists create $1 --type ipAddress
 
+sleep 60
+
 echo "\n============Cluster List==============="
 clusters_list=`atlas clusters list`
 echo "::set-output name=clusters_list::$clusters_list"
