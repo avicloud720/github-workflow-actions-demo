@@ -10,7 +10,7 @@ atlas config set project_id $MONGO_ATLAS_PROJECT_ID
 atlas config set org_id $MONGO_ATLAS_ORG_ID
 # atlas organizations apiKeys accessLists create --apiKey $MONGO_ATLAS_PUB_API_KEY
 # atlas accessList create --currentIP
-atlas accessList create entry '0.0.0.0/0'
+atlas accessList create '0.0.0.0/0'
 
 echo "\n============Cluster List==============="
 echo "This is $1"
