@@ -13,7 +13,9 @@ atlas accessLists create $1
 
 sleep 30
 
-atlas organizations apiKeys accessLists create --apiKey 62f5ff28a3c1c03dd24ddf10 --ip $1
+atlas projects apiKeys create
+
+# atlas organizations apiKeys accessLists create --apiKey 62f5ff28a3c1c03dd24ddf10 --ip $1
 
 sleep 30
 
