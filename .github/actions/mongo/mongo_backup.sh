@@ -10,10 +10,9 @@ atlas config set project_id $MONGO_ATLAS_PROJECT_ID
 atlas config set org_id $MONGO_ATLAS_ORG_ID
 # atlas organizations apiKeys accessLists create --apiKey $MONGO_ATLAS_PUB_API_KEY
 # atlas accessList create --currentIP
-atlas accessList create $GITHUB_ENV
+atlas accessList create $1
 
 echo "\n============Cluster List==============="
-echo "This is $1"
 clusters_list=`atlas clusters list`
 echo "::set-output name=clusters_list::$clusters_list"
 

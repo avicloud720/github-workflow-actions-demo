@@ -2,10 +2,10 @@
 name: 'Custom Action'
 description: 'List clusters of DB system'
 inputs:
-  db_name:  # id of input
-    description: 'Type of DB'
+  runner_ip:  # id of input
+    description: 'IP address of the GitHub Runner'
     required: true
-    default: 'mongodb'
+    default: '0.0.0.0'
 outputs:
   clusters_list: # id of output
     description: 'List of clusters'

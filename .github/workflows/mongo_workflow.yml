@@ -19,14 +19,14 @@ jobs:
         uses: haythem/public-ip@v1.2
       - name: Print Public IP
         run: |
-          ${{ steps.ip.outputs.ipv4 }} > $GITHUB_ENV
+          echo ${{ steps.ip.outputs.ipv4 }}
       - name: Checkout
         uses: actions/checkout@v2
       - name: MongoDB Connection in progress......
         id: connection
         uses: ./.github/actions/mongo
         with:
-          db_name: 'mongodb'
+          runner_ip: ${{ steps.ip.outputs.ipv4 }}
       # Use the output from the `connection` step
       - name: Get the output
         run: echo "The cluster list ${{ steps.connection.outputs.clusters_list }}"
